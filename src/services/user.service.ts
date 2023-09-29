@@ -2,6 +2,7 @@ import { omit, get } from "lodash";
 import { FilterQuery, QueryOptions } from "mongoose";
 import config from "config";
 import userModel, { User } from "../models/user.model";
+import mensagemModel from "../models/mensagem.model";
 import { excludedFields } from "../controllers/auth.controller";
 import { signJwt } from "../utils/jwt";
 import redisClient from "../utils/connectRedis";
@@ -51,4 +52,12 @@ export const signToken = async (user: DocumentType<User>) => {
 
   // Return access token and refresh token
   return { access_token, refresh_token };
+};
+
+export const retornaMensagem = async (idPar: number) => {
+  console.log(idPar)
+  //const mess = await mensagemModel.find({idm: idPar});
+  const mess = await mensagemModel.find({idm: idPar});
+
+  return mess;
 };

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { findAllUsers } from "../services/user.service";
+import { findAllUsers, retornaMensagem } from "../services/user.service";
 
 export const getMeHandler = (
   req: Request,
@@ -33,6 +33,19 @@ export const getAllUsersHandler = async (
         users,
       },
     });
+  } catch (err: any) {
+    next(err);
+  }
+};
+
+export const mensagemUserHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const idPar = req.body.id;
+    res.status(200).json(await retornaMensagem(idPar));
   } catch (err: any) {
     next(err);
   }
