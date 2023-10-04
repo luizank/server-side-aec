@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "982c9835-4bbb-4209-8ca0-a136cd9b8fc8",
+		"_postman_id": "0a3e5743-05e2-4c9f-b775-8f90a2dddda4",
 		"name": "Aprender&Crescer",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "5766664"
@@ -116,6 +116,161 @@
 							}
 						},
 						"url": "http://localhost:8000/api/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Get all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produto/:idProduto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produto",
+								":idProduto"
+							],
+							"variable": [
+								{
+									"key": "idProduto",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codBarras\": \"6029708308745\",\r\n    \"descricao\": \"Notebook Gamer\",\r\n    \"marca\": \"Lenovo\",\r\n    \"preco\": 3569.98\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Update  a product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codBarras\": \"6029708308745\",\r\n    \"descricao\": \"Notebook Aspire 5\",\r\n    \"marca\": \"Acer\",\r\n    \"preco\": 2264.05\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produto/:idProduto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produto",
+								":idProduto"
+							],
+							"variable": [
+								{
+									"key": "idProduto",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inactivate a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produto/:idProduto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produto",
+								":idProduto"
+							],
+							"variable": [
+								{
+									"key": "idProduto",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				}
