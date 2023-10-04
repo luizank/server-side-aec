@@ -19,7 +19,7 @@ import {
 const router = express.Router();
 router.use(deserializeUser, requireUser);
 
-router.get("/", requireUser, getAllProductsController);
+router.get("/", getAllProductsController);
 router.get("/:idProduto", validate(getProductSchema), getProductController);
 router.post("/", validate(createProductSchema), createProductController);
 router.put(
